@@ -1,4 +1,4 @@
-module quiz-3
+module final-project-sanbercode-go-batch-41
 
 go 1.19
 

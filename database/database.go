@@ -7,21 +7,17 @@ import (
 	migrate "github.com/rubenv/sql-migrate"
 )
 
-var (
-	DbConnection *sql.DB
-)
-
-func DbMigrate(dbParam *sql.DB) {
+func Migrations(db *sql.DB) {
 	migrations := &migrate.PackrMigrationSource {
-		Box: packr.New("migrations", "./sql_migrations"),
+		Box: packr.New("migrations", "./sql"),
 	}
 
-	n, errs := migrate.Exec(dbParam, "postgres", migrations, migrate.Up)
-	if errs != nil {
-		panic(errs)
+	num, err := migrate.Exec(db, "postgres", migrations, migrate.Up)
+	if err != nil {
+		fmt.Println("failed to execute sql file.")
+		panic(err)
 	}
 
-	DbConnection = dbParam
-	
-	fmt.Println("Applied", n, "migrations!")
+	// DBCatch = db
+	fmt.Println("applied", num, "migrations.")
 }
