@@ -32,7 +32,6 @@ func ConnectToDatabase() *sql.DB {
 
 	err = db.Ping()
 	database.Migrations(db)
-	// defer db.Close()
 
 	return db
 }
