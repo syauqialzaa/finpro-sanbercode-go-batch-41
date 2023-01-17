@@ -13,9 +13,7 @@ import (
 func ConnectToDatabase() *sql.DB {
 	err := godotenv.Load(".env")
 	if err != nil {
-		fmt.Println("error load .env file.")
-	} else {
-		fmt.Println("successfully to load .env file.")
+		fmt.Println("[DEBUG] error load .env file.")
 	}
 
 	psqlConfig := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
@@ -28,15 +26,13 @@ func ConnectToDatabase() *sql.DB {
 
 	db, err := sql.Open("postgres", psqlConfig)
 	if err != nil {
-		fmt.Println("failed to connect database.")
+		fmt.Println("[DEBUG] failed to connect database.")
 		panic(err)
-	} else {
-		fmt.Println("successfuly to connect database.")
 	}
 
 	err = db.Ping()
 	database.Migrations(db)
-	defer db.Close()
+	// defer db.Close()
 
 	return db
 }

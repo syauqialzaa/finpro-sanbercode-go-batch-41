@@ -2,11 +2,9 @@
 -- +migrate StatementBegin
 
 CREATE TABLE admins (
-  id INT PRIMARY KEY NOT NULL,
+  id SERIAL PRIMARY KEY,
   username VARCHAR(256),
-  password VARCHAR(256),
-  token VARCHAR(256),
-  token_exp TIMESTAMP
+  password VARCHAR(256)
 );
 
 

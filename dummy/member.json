@@ -1,0 +1,30 @@
+[{
+  "id": 1,
+  "name": "Alza Syauqi",
+  "email": "alza@email.com",
+  "team_id": 3
+},
+{
+  "id": 2,
+  "name": "Elon Musk",
+  "email": "elon@email.com",
+  "team_id": 3
+},
+{
+  "id": 3,
+  "name": "Jeff Bezos",
+  "email": "jeff@email.com",
+  "team_id": 2
+},
+{
+  "id": 4,
+  "name": "Warren Buffett",
+  "email": "warren@email.com",
+  "team_id": 1
+},
+{
+  "id": 5,
+  "name": "Bill Gates",
+  "email": "bill@email.com",
+  "team_id": 2
+}]
