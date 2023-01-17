@@ -10,8 +10,6 @@ import (
 	_ "github.com/lib/pq"
 )
 
-var PORT = ":" +os.Getenv("PORT")
-
 func ConnectToDatabase() *sql.DB {
 	err := godotenv.Load(".env")
 	if err != nil {
